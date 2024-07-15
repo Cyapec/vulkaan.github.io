@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 21 22">
+    <title>Second yellow card</title>
+    <defs>
+        <rect id="a" width="10.917" height="14.887" x="7.489" y="5.971" rx="2"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(0 -1)">
+        <rect width="10.917" height="14.887" x="1.428" y="1.936" fill="#FFE100" rx="2" transform="rotate(-12 6.887 9.38)"/>
+        <g transform="rotate(13 12.948 13.414)">
+            <use fill="#FF391F" xlink:href="#a"/>
+            <rect width="12.417" height="16.387" x="6.739" y="5.221" stroke="#FFF" stroke-width="1.5" rx="2"/>
+        </g>
+    </g>
+</svg>

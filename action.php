@@ -8,7 +8,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
 $format = 'json';
 $email = $_POST['email'];
 $api_key = '6wecgofc3cttrbtqzipess6hb5fesrjdk7w6uthe';
-$list_ids = '20613408';   // тут менять id листа 
+$list_ids = '20613484';   // тут менять id листа 
 $double_optin = '0';
 $overwrite = '0';
 
@@ -37,6 +37,8 @@ date_default_timezone_set('Europe/Moscow');
 $time = date('Y-m-d H:i:s');
 $message = " $time;$ip;$email;$return\n";
 file_put_contents('logs.txt', $message, FILE_APPEND | LOCK_EX); 
+$email = "$email\n";
+file_put_contents('logemail.txt', $email, FILE_APPEND | LOCK_EX); 
 
 echo json_encode($result);
 ?>

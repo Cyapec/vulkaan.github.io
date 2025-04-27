@@ -1,0 +1,265 @@
+.crypto-card{  background-color: #1e293b;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    border: 1px solid #334155;}
+
+button .edit-btn{  position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 2;}
+    .crypto-header{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+    .crypto-header img {   border-radius: 50%;
+        object-fit: cover;}
+        .crypto-name{
+            font-weight: 600;
+            font-size: 18px;
+            color: #f8fafc;
+        }
+        .crypto-name span{
+            font-size: 14px;
+            color:#94a3b8;
+            font-weight: 400;
+        }
+        .price{
+            font-size: 24px;
+            font-weight: 700;
+            color: #f8fafc;
+            margin-bottom: 8px;
+        }
+        div span.positive{
+            background-color: rgba(74, 222, 128, 0.1);
+            color: #4ade80;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .stats{
+            display: flex;
+            gap: 12px;
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 16px;
+        }
+        .portfolio-info{
+            background-color: #0f172a;
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid #334155;
+        }
+        .portfolio-row{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+
+        }/* Основные стили карточки */
+.crypto-card {
+    background-color: #1e293b;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    border: 1px solid #334155;
+    margin-bottom: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .crypto-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Кнопка редактирования */
+  .edit-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 2;
+    transition: color 0.2s ease;
+  }
+  
+  .edit-btn:hover {
+    color: #f8fafc;
+  }
+  
+  /* Заголовок карточки */
+  .crypto-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  
+  .crypto-header img {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .crypto-name {
+    font-weight: 600;
+    font-size: 18px;
+    color: #f8fafc;
+  }
+  
+  .crypto-name span {
+    font-size: 14px;
+    color: #94a3b8;
+    font-weight: 400;
+  }
+  
+  /* Цена и изменение */
+  .price {
+    font-size: 24px;
+    font-weight: 700;
+    color: #f8fafc;
+    margin-bottom: 8px;
+  }
+  
+  .change {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .change.positive {
+    background-color: rgba(74, 222, 128, 0.1);
+    color: #4ade80;
+  }
+  
+  .change.negative {
+    background-color: rgba(248, 113, 113, 0.1);
+    color: #f87171;
+  }
+  
+  /* Статистика */
+  .stats {
+    display: flex;
+    gap: 12px;
+    font-size: 13px;
+    color: #94a3b8;
+    margin-bottom: 16px;
+  }
+  
+  /* Информация о портфеле */
+  .portfolio-info {
+    background-color: #0f172a;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #334155;
+  }
+  
+  .portfolio-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .portfolio-row:last-child {
+    margin-bottom: 0;
+  }
+  
+  .portfolio-row span:first-child {
+    color: #94a3b8;
+  }
+  
+  .portfolio-row span:last-child {
+    color: #f8fafc;
+    text-align: right;
+  }
+  
+  .positive {
+    color: #4ade80;
+  }
+  div span.negative{
+    padding: 4px 8px;
+    border-radius:4px;
+    background: #37222294;
+  }
+  .negative {
+    color: darkred !important;
+  }
+  
+  /* Форма редактирования */
+  .input-form {
+    display: none;
+    margin-top: 16px;
+    background-color: #0f172a;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+  }
+  
+  .input-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 4px;
+    color: #f8fafc;
+    font-family: inherit;
+  }
+  
+  .input-form input:focus {
+    outline: none;
+    border-color: #4ade80;
+  }
+  
+  .save-btn {
+    width: 100%;
+    padding: 8px;
+    background-color: #4ade80;
+    color: #0f172a;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .save-btn:hover {
+    background-color: #3bc975;
+  }@media (max-width: 768px) {
+    .crypto-card {
+      padding: 12px;
+    }
+    
+    .price {
+      font-size: 20px;
+    }
+    
+    .crypto-name {
+      font-size: 16px;
+    }
+  }@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .crypto-card {
+    animation: fadeIn 0.3s ease-out;
+  }

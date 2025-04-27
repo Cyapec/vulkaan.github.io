@@ -1,1871 +1,288 @@
-<html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Олими Ҷопон дар мусоҳиба дар бораи усулҳои инноватсионии табобати беқувватӣ ва простатит сӯҳбат хоҳад кард!
-    </title>
-    <link rel="icon" href="files/favicon.ico" type="image/x-icon">
-
-    <link rel="stylesheet" href="files/style.css">
-    <link href="files/custom-wheel.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap"
-        rel="stylesheet">
-    <script async="" src="files/fbevents.js"></script>
-    <script src="files/jquery.min.js"></script>
-    <script src="files/dtime.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Portfolio Tracker</title>
+    <link rel="stylesheet" href="index.css" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./files/styleupdate.css">
-
-    <script esub_for_shop="-7EBNQCgQAAAM_tgN4hQAFDleG9BERChEJChENQhENEgABf2FkY29tYm8BMQ"
-    user_safe_id="6853e4e4f3131bb07a09a695f1a55074" cat="" subacc="{subid}" subacc2="inf2vk5"   src="https://cf.just-news.pro/js/fcmjsgo/bckfix4shp.js"></script>
-
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="card.css" />
+  </head>
+  <body>
     <style>
-        .categories ul li a {
-            color: white !important;
+      .table-container {
+        margin: 20px 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        overflow: hidden;
+        background: #1e1e2e;
+        color: #e0e0e0;
+      }
+    
+      .table-container h3 {
+        padding: 16px 24px;
+        margin: 0;
+        background: linear-gradient(135deg, #6e3efb, #8a57e3);
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+    
+      .performance-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+      }
+    
+      .performance-table thead {
+        background-color: #2a2a3a !important;
+        position: sticky;
+        top: 0;
+      }
+    
+      .performance-table th {
+        padding: 14px 16px;
+        text-align: left;
+        font-weight: 600;
+        color: #b0b0ff;
+        border-bottom: 2px solid #3a3a4a;
+        white-space: nowrap;
+        letter-spacing: 0.3px;
+      }
+    
+      .performance-table td {
+        padding: 12px 16px;
+        border-bottom: 1px solid #3a3a4a;
+        vertical-align: middle;
+      }
+    
+      .performance-table tbody tr:last-child td {
+        border-bottom: none;
+      }
+    
+      .performance-table tbody tr:hover {
+        background-color: #2d2d3d !important;
+      }
+    
+      .performance-table img {
+        vertical-align: middle;
+        margin-right: 8px;
+        border-radius: 50%;
+        border: 1px solid #4a4a5a;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      }
+    
+      .performance-table .total-row {
+        background-color: #2a2a3a;
+        font-weight: 600;
+        color: #ffffff;
+      }
+    
+      .performance-table .total-row:hover {
+        background-color: #2a2a3a !important;
+      }
+    
+      /* Градиентные цвета для процентов */
+      .performance-table td:nth-child(8) {
+        font-weight: 500;
+        position: relative;
+      }
+    
+      .performance-table td:nth-child(8):before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(to bottom, #6e3efb, #8a57e3);
+        border-radius: 0 3px 3px 0;
+      }
+    
+      /* Цвета в зависимости от значения процента */
+      .performance-table td:nth-child(8) {
+        color: #6eefb0; /* Базовый цвет */
+      }
+    
+      .performance-table td:nth-child(8):contains("0%"),
+      .performance-table td:nth-child(8):contains("10%") {
+        color: #ff6b6b; /* Красный для низких значений */
+      }
+    
+      .performance-table td:nth-child(8):contains("30%"),
+      .performance-table td:nth-child(8):contains("40%"),
+      .performance-table td:nth-child(8):contains("50%") {
+        color: #feca57; /* Желтый для средних значений */
+      }
+    
+      .performance-table td:nth-child(8):contains("60%"),
+      .performance-table td:nth-child(8):contains("70%"),
+      .performance-table td:nth-child(8):contains("80%"),
+      .performance-table td:nth-child(8):contains("90%"),
+      .performance-table td:nth-child(8):contains("100%") {
+        color: #1dd1a1; /* Зеленый для высоких значений */
+      }
+    
+      /* Анимация строк */
+      @keyframes fadeIn {
+        from { opacity: 0.7; transform: translateY(2px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    
+      .performance-table tbody tr {
+        animation: fadeIn 0.3s ease forwards;
+      }
+    
+      /* Полосатая таблица */
+      .performance-table tbody tr:nth-child(odd) {
+        background-color: #252536;
+      }
+    
+      /* Стили для скролла */
+      .table-container::-webkit-scrollbar {
+        height: 8px;
+        width: 8px;
+      }
+    
+      .table-container::-webkit-scrollbar-track {
+        background: #2a2a3a;
+      }
+    
+      .table-container::-webkit-scrollbar-thumb {
+        background: #6e3efb;
+        border-radius: 4px;
+      }
+    
+      /* Индикатор сортировки */
+      .performance-table th.sorted-asc::after,
+      .performance-table th.sorted-desc::after {
+        content: "";
+        display: inline-block;
+        margin-left: 8px;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+      }
+    
+      .performance-table th.sorted-asc::after {
+        border-bottom: 5px solid #b0b0ff;
+      }
+    
+      .performance-table th.sorted-desc::after {
+        border-top: 5px solid #b0b0ff;
+      }
+    
+      /* Эффект свечения при наведении на заголовок */
+      .performance-table th:hover {
+        text-shadow: 0 0 8px rgba(176, 176, 255, 0.4);
+      }
+    
+      /* Адаптивность */
+      @media (max-width: 768px) {
+        .table-container {
+          border-radius: 8px;
         }
-
-        .order_block__wrapper {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            gap: 4px;
+        
+        .performance-table {
+          font-size: 0.8rem;
         }
-
-        @media screen and (min-width:800px) {
-            .order__block {
-                width: 70% !important;
-                margin: 0 auto;
-            }
+        
+        .performance-table th, 
+        .performance-table td {
+          padding: 10px 12px;
         }
-
-        @media screen and (max-width:799px) {
-            .order_block__wrapper {
-                flex-direction: column !important;
-                border: none !important;
-                border-radius: 10px !important;
-            }
-
-        }
-
-        .order__block {
-            border-radius: 10px !important;
-
-            background-color: #1c1a8641;
-        }
-
-        .form_btn {
-            background-color: green;
-        }
-
-        .form__input {
-            color: black !important;
-        }
+      }
     </style>
-    <link type="text/css" rel="stylesheet" charset="UTF-8"
-        href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.qhDXWpKopYk.L.W.O/am=wA/d=0/rs=AN8SPfq5gedF4FIOWZgYyMCNZA5tU966ig/m=el_main_css">
-</head>
-
-
-<body>
-    <div class="wrapper">
-        <header>
-            <div class="left-section">
-                <img style="width: 100px;" src="./files/1.jpg" alt="Лого">
-                <div class="red-line"></div>
-                <a href="#" style="text-decoration: none;"><span class="menu">
-
-                        Меню
-
-                    </span></a>
-                <a href="#" style="text-decoration: none;">
-                    <div class="red-arrow"></div>
-                </a>
-            </div>
-            <div class="right-section">
-                <a href="#"> <img src="./files/5-19.jpg" style="height: 37px;width: 35px;" alt="Нишонаи ҷустуҷӯ"></a>
-                <a href="#"> <img src="./files/5-20.jpg" style="height: 35px;width: 35px;" alt="Нишонаи ҷустуҷӯ"></a>
-            </div>
-        </header>
-        <nav>
-            <ul class="head_ul ul_head">
-                <a href="#">
-                    <li class="hid10 li_head" style="font-size: 30px;">
-
-                        ХАБАРХО
-
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hid9 li_head">
-
-                        Ҳикояҳои беҳтарин
-
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hid8 li_head">
-
-                        маҳаллӣ
-
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hid7 li_head">
-
-                        Иқлим
-
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hid6 li_head">
-
-                        Ҷаҳон
-
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hid5 li_head">
-
-                        Сиёсат
-
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hid4 li_head">
-
-                        бумӣ
-
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hid2 li_head">
-
-                        миллӣ
-
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hid1 li_head">
-
-                        Бештар
-
-                    </li>
-                </a>
-                <a href="#">
-                    <li class="hid li_head" style="display: none;">
-
-                        Категорияҳо
-
-                    </li>
-                </a>
-            </ul>
-        </nav>
-        <div class="content">
-            <div class="current-category">
-
-                ахбор
-
-            </div>
-            <h2 class="title" style="text-transform: uppercase;">
-
-
-                Кризиси глобалии тавобати простатит дар Точикистон 
-Аз чудо шавии оила то саратони простата дар як кадам
-
-
-            </h2>
-            <h3 class="subtitle">
-
-                Олими Ҷопон дар мусоҳиба дар бораи усулҳои инноватсионии
-                табобати беқувватӣ ва простатит сӯҳбат хоҳад кард!
-
-            </h3>
-            <div class="post-date">
-                <script type="text/javascript">dtime_nums(-7, true)</script>
-
-
-
-
-            </div>
-            <div class="categories">
-                <ul>
-                    <li class="current"><a href="#" style="text-decoration: none;">
-
-                            Тандурустй
-
-                        </a></li>
-                    <li><a href="#" style="text-decoration: none;">
-
-                            Доктор Хироси Ямада
-
-                        </a></li>
-                    <li><a href="#" style="text-decoration: none;">
-
-                            Аксҳо аз оқибатҳои
-
-                        </a></li>
-                    <li><a href="#" style="text-decoration: none;">
-
-                            Простатит
-
-                        </a></li>
-                    <li><a href="#" style="text-decoration: none;">
-
-                            Мусоҳиба
-
-                        </a></li>
-                </ul>
-            </div>
-            <div class="social">
-                <a href="#" style="text-decoration: none;"> <span>
-
-                        Мубодила
-
-                    </span></a>
-                <a href="#"> <img src="files/facebook.jpg" class="b-lazy b-loaded b-lazy"></a>
-                <a href="#"> <img src="files/twitter.jpg" class="b-lazy b-loaded b-lazy"></a>
-                <a href="#"> <img src="files/linkedin.jpg" class="b-lazy b-loaded b-lazy"></a>
-                <a href="#"> <img src="files/pinterest.jpg" class="b-lazy b-loaded b-lazy"></a>
-                <a href="#"> <img src="files/email.jpg" class="b-lazy b-loaded b-lazy"></a>
-            </div>
-            <div class="doca" style="padding: 20px; background-color: #e9e9e9; margin-bottom: 20px">
-                <img src="files/doktor.jpg" class="image  horizontal b-lazy b-loaded b-lazy">
-
-                <p><strong>
-
-                        Хироси Ямада
-
-                    </strong></p>
-                <p>
-                    <b>
-
-                        Урологи маъруфи ҷопонӣ, профессор ва барандаи ҷоизаи
-                        академии Нобел.
-
-
-                    </b><br>
-
-
-                    - Хироси Ямада дар синни 75-солагӣ ба нафақа баромад. Дар тадқиқоти клиникӣ ва таҳияи
-                    усулҳои нави ташхис ва табобати бемориҳои урологӣ иштирок кардааст.
-                    <br>
-
-
-
-                    - дар тадқиқоти клиникӣ ва таҳияи усулҳои нави ташхис ва табобати бемориҳои урологӣ иштирок
-                    кардааст.
-                    <br>
-
-
-                    - Профессор 86 сол дорад, аммо мегӯяд, аз мушкилоти ғадуди простата ва беқувватӣ ҳатто дар
-                    ин синну сол метавон пешгирӣ кард.
-
-
-
-
-                </p>
-            </div>
-
-            <p>
-
-                Соли 2023 дар Тоҷикистон маълумоти рекордӣ аз рӯи шумораи
-                мардони гирифтори импотент ва простатитро нишон дод. Фактхои дахшатангез ва муносибати нав ба
-                халли масъала!
-
-
-            </p>
-
-            <p>
-                <strong>
-
-                    -Доктор Ямада, чаро илтиҳоби ғадуди простата бемории
-                    вазнин ҳисобида мешавад?
-
-
-                </strong>
-            </p>
-            <p><strong>
-
-                    Доктор Хироши Ямада:
-
-                </strong>
-
-                Простатит як бемории ниҳоят хатарнок аст, ки бо мурури замон
-                тақрибан ба тамоми узвҳо ва системаҳои бадани мо осеби ҷиддӣ мерасонад.
-
-
-
-
-            </p>
-            <h1 class="comm">
-
-                Муҳим аст, ки аломатҳои аввалини простатитро нодида нагиред!
-                Муайян кардани мавҷудияти простатит хеле содда аст ва бидуни маълумоти тиббӣ; аксари нишонаҳои
-                аввалини он мушаххасанд:
-
-
-            </h1>
-            <p class="grey_list"
-                style="background-color: #ccc; padding: 20px 5px; text-align: left; padding: 10px;line-height: 24px;">
-                <strong style="text-transform: uppercase;">
-
-                    ихтилоли пешоб
-
-
-                </strong><br>
-
-
-
-                1. Зуд-зуд пешоб кардан, сӯхтани пешоб дар пешоб
-
-
-                <br>
-
-
-
-                2. Эҳсоси “пурра холӣ нашудани масона”
-
-
-                <br>
-
-
-
-                3. Мушкилии пешоб (маҷрои заиф)
-
-                <br> <br>
-                <strong style="text-transform: uppercase;">
-
-                    вайроншавии фаъолияти ҷинсӣ
-
-
-
-
-                </strong><br>
-
-
-
-                1. Коҳиши хоҳиши ҷинсӣ
-
-
-                <br>
-
-
-
-                2. Паст шудани давомнокӣ ва сифати
-
-
-
-
-                <br> <br> <strong style="text-transform: uppercase;">
-
-                    вайроншавии эрексияи эякуляция
-
-
-
-                </strong><br>
-
-
-
-                1. Эякуляцияи бармаҳал ё мушкилоти расидан ба он
-
-
-
-                <br>
-
-
-
-                2. Эякуляцияи заиф
-
-
-
-                <br>
-
-
-
-                3. Зиёд шудани хастагӣ ва асабонияти бадан
-
-
-
-
-
-            </p>
-
-            <p> <b>
-
-                    - Чаро табибон дар табобати ин беморӣ ба мушкилӣ дучор
-                    мешаванд? Оё табобати муассир ҳаёти ҳазорон нафарро наҷот намедиҳад?
-
-
-                </b></p>
-
-            <p>
-                <b>
-
-                    Доктор Хироши Ямада:
-
-                </b>
-
-                Вақте ки ман барои табодули таҷриба бо ҳамкорони худ ба
-                Тоҷикистон сафар кардам, аз он тарсидам, ки то ҳол табобати простатит як раванди мураккаб ва
-                тӯлонӣ боқӣ мемонад.
-
-
-            </p>
-            <p>
-
-
-
-
-                Дар Тоҷикистон простатитро ҳамеша бо доруҳои кӯҳна ва бесамар табобат мекарданд ва онҳо бояд дар
-                тӯли ҳаёт пайваста истифода шаванд. Масалан, дар Ҷопон онҳо метавонанд мушкилотро дар тӯли ду
-                ҳафта табобат кунанд. Дар Тоҷикистон ҳар дувумин марди аз 25-сола боло дар ин ё он марҳала
-                гирифтори бемории простатит мешавад. Урологҳо инро медонанд, онҳо медонанд, ки ғизои муқаррарии
-                узвҳои коси хурдро барқарор кардан ва истеҳсоли табиии тестостеронро зиёд кардан лозим аст. Аммо
-                бо ин ё он сабаб ин амал дар тибби Тоҷикистон маъмул нест.
-
-
-            </p>
-
-
-
-            <img src="files/content2.jpg" class="image horizontal b-lazy b-loaded b-lazy" style="margin-bottom: 5px; ">
-            <span
-                style="margin-bottom: 20px !important;display: block;margin: 0 auto;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Helvetica, sans-serif, sans-serif;    text-align: center; ">
-
-                Доктор Хироши Ямада дар конфронси урология дар Тоҷикистон
-
-
-            </span>
-            <p>
-
-                Муҳимтар аз ҳама он аст, ки таъхир накунед! Ихтилоли
-                фаъолияти ҷинсӣ ва эякуляция оқибати ҷиддии ин беморӣ нест. Аденома ғадуди простата хеле
-                хатарноктар аст: он варами ғадуди простата мебошад, ки аксар вақт боиси рушди саратони ғадуди
-                простата мегардад. Чунин нишонаҳо, ки дар назари аввал ночиз ба назар мерасанд, қариб ҳамеша дар
-                марҳилаҳои аввал ба оқибатҳои ҷуброннопазир оварда мерасонанд:
-
-
-
-            </p>
-
-            <p class="com"
-                style="font-size: 24px;  padding-left: 10px;border-left: 2px solid #f72210;vertical-align:middle;line-height: 30px;">
-                <strong class="str_com">
-
-                    Импотенция
-
-                </strong>
-            </p>
-            <div class="div_hid_photo"> <img id="image1" onclick=" handleImageClick()" class="image horizontal blur"
-                    style="max-width: auto !important; border-top: 0 !important ;margin:10px auto "
-                    src="./files/impotencia.jpg" alt=""> <img class="hand_photo" src="./files/hand.png"
-                    onclick=" handleImageClick()" id="hand1" alt=""></div>
-
-            <p class="com"
-                style="font-size: 24px;  padding-left: 10px;border-left: 2px solid #f72210;vertical-align:middle;line-height: 30px;">
-                <strong class="str_com">
-
-                    Саратони простата
-
-                </strong><span class="str_com">
-
-
-                    сабаби маъмултарини марг (то 88%) дар мардоне, ки аз импотенция азоб мекашанд.
-
-                </span>
-            </p>
-            <div class="div_hid_photo"> <img id="image2" class="image horizontal blur"
-                    style="max-width: auto !important; border-top: 0 !important ;margin:10px auto "
-                    src="./files/rak.jpg" onclick="handleImageClick()" alt=""> <img class="hand_photo"
-                    src="./files/hand.png" id="hand2" alt=""></div>
-
-            <p class="com"
-                style="font-size: 24px;  padding-left: 10px;border-left: 2px solid #f72210;vertical-align:middle;line-height: 30px;">
-                <strong class="str_com">
-
-                    BPH
-
-                </strong>
-
-            </p>
-            <div class="div_hid_photo"> <img id="image3" class="image horizontal blur"
-                    style="max-width: auto !important; border-top: 0 !important ;margin:10px auto "
-                    src="./files/adenoma.jpg" onclick="handleImageClick()" alt=""> <img class="hand_photo"
-                    src="./files/hand.png" id="hand3" alt=""></div>
-
-            <p class="com"
-                style="font-size: 24px;  padding-left: 10px;border-left: 2px solid #f72210;vertical-align:middle;line-height: 30px;">
-                <strong class="str_com">
-
-                    Санги гурда
-
-                </strong> <span class="str_com">
-
-                    Санги гурда низ аз сабаби бад шудани хуни узвхои коси
-                    хурд инкишоф меёбад.
-
-                </span>
-
-            </p>
-            <div class="div_hid_photo"> <img id="image4" class="image horizontal blur"
-                    style="max-width: auto !important; border-top: 0 !important ;margin:10px auto "
-                    src="./files/kamni.png" onclick="handleImageClick()" alt=""> <img class="hand_photo"
-                    src="./files/hand.png" id="hand4" alt=""></div>
-            <p>
-                <strong>
-
-                    — Шумо борхо гуфта будед, ки зарфхои тоза асоси саломатй
-                    мебошанд. Чаро шумо чунин фикр мекунед?
-
-
-                </strong>
-
-            </p>
-            <p>
-
-
-                <strong>
-
-                    Доктор Хироши Ямада:
-
-                </strong>
-
-                Кайҳо боз маълум аст, ки простатит, беқувватӣ ва
-                номутаносибии эректилӣ паёмадҳои “ифлосшавӣ”-и рагҳои хунгард мебошанд. Теъдоди ками одамон дарк
-                мекунанд, ки ин танҳо нӯги айсберг аст. Аз 10 бемории музмин 9-тоаш рагҳои хунравии «ифлосшуда»
-                мебошанд. Ягона роҳи самараноки табобати простатит ин беҳтар кардани дисфунксияи эректилӣ ва
-                тоза кардани рагҳои хун мебошад. Норасоии эректилӣ дар ҳама мардони мубталои простатит,
-                новобаста аз замони пайдоиши он мушоҳида мешавад - он метавонад пештар ё дертар ба амал ояд.
-                Саратони простата метавонад ҳам дар марҳилаҳои дер ва ҳам дар ибтидои простатит инкишоф ёбад.
-                Ҳатто агар шумо ин нишонаҳо надошта бошед, пас аз 30 соли зиндагӣ шумо бояд ҳадди аққал як
-                маротиба дар 5 сол рагҳои хунро тоза кунед. Барои нигоҳ доштани саломатӣ ва қобилияти пурраи
-                ҳаёти ҷинсӣ, простатитро фавран табобат кардан лозим аст.
-
-
-
-            </p>
-            <p>
-
-                <strong style="margin-bottom:15px; display: block;">
-
-                    — Метавонед ба мо сирри тоза кардани рагҳои хунро бигӯед?
-
-
-                </strong>
-
-
-                <strong>
-
-
-                    Доктор Хироши Ямада:
-
-                </strong>
-
-                Барои тозакунии бехатари рагҳои хун, ман метавонам танҳо як
-                маҳсулотро номбар кунам, ки обрӯи бенуқсон дорад. Ман дар бораи доруи махсус
-                <a href="#" style="text-decoration:none;">
-
-                    Men's Defence
-
-                </a>
-
-                гап мезанам . Ин табобатест, ки ба шумо имкон медиҳад, ки
-                дардро дар муддати кӯтоҳтарин, яъне аз 4 рӯз фаромӯш кунед ва ҳатто ҳолатҳои хеле мураккабро дар
-                давоми як моҳ табобат кунед. Он умрро 15-20 сол дароз мекунад, кори ғадуди простатаро барқарор
-                мекунад, эрекцияро беҳтар мекунад ва безурётӣ пешгирӣ мекунад.
-
-
-            </p>
-            <p>
-
-                <strong>
-
-                    -Таъсирбахш. Ростӣ, ин бори аввал аст, ки ман дар бораи
-
-                    <a href="#" style="text-decoration:none;">
-
-                        Men's Defence
-
-                    </a>
-
-                    мешунавам
-                    , метавонед ба ман бештар бигӯед?
-
-                </strong>
-            </p>
-            <p>
-                <strong>
-
-                    Доктор Хироши Ямада:
-
-                </strong><a href="#" style="text-decoration:none;">
-
-                    Men's Defence
-
-                </a>
-
-                дар бадани инсон антитело эҷод мекунад, ки ба тухмдонҳо ва
-                системаи масуният таъсир мерасонад, таъсири он пас аз 1-2 ҳафтаи истифодаи мунтазам мушоҳида
-                мешавад. Бар хилофи бисёр дигар доруҳо ва доруҳои зидди илтиҳоби ғадуди простата, ин маҳсулот аз
-                ҷониби коршиносони соҳа таҳия шудааст, на аз ҷониби ширкатҳои бузурги фармасевтӣ. Маҳсулот дар
-                ҳамкорӣ бо урологҳо ва олимони пешрафта таҳия карда шудааст.
-
-
-
-
-            </p>
-
-            <div class="list-container">
-                <h2>
-
-                    Маводи мухаддир ба бадани мард таъсири гуногун дорад:
-
-
-                </h2>
-                <ul class="styled-list">
-                    <li>
-
-                        илтиҳоби музмини ғадуди простатаро дафъ ва дафъ
-                        мекунад;
-
-
-                    </li>
-                    <li>
-
-                        Пешгирии сирояти роҳҳои пешоб;
-
-
-                    </li>
-                    <li>
-
-                        Пешобро осон мекунад;
-
-
-                    </li>
-                    <li>
-
-                        Потенсиалро барқарор мекунад;
-
-
-                    </li>
-                    <li>
-
-                        Либидоро зиёд мекунад;
-
-
-
-                    </li>
-                    <li>
-
-                        Безурётӣ пешгирӣ мекунад.
-
-
-
-                    </li>
-                </ul>
-            </div>
-            <img src="files/produkt.png" class="image horizontal"
-                style="max-width: 360px !important; border-top: 0 !important">
-            <p><strong>
-
-                    - Ин доруи мӯъҷизавӣ чӣ гуна кор мекунад?
-
-
-                </strong></p>
-            <p><strong>
-
-                    Доктор Хироши Ямада:
-
-                </strong>
-
-                Дар ин ҷо ягон мӯъҷиза вуҷуд надорад. Илми хушк.
-                <a href="#" style="text-decoration:none;">
-
-                    Men's Defence
-
-                </a>
-
-                Аз компонентҳои табиӣ сохта шудааст.
-
-
-            </p>
-            <p>
-
-                Танҳо аз ҳисоби таркиби сифатан интихобшуда барқарорсозӣ,
-                мӯътадилсозӣ ва муттаҳидсозии эрекцияи муқаррарӣ ба амал меояд. Баръакси иловаҳои гуногуни
-                парҳезӣ ва лавҳаҳои синтетикӣ,
-                <a href="#" style="text-decoration:none;">
-
-                    Men's Defence
-
-                </a>
-
-                қудрати табииро бе ягон зарар ба саломатӣ барқарор мекунад.
-
-
-            </p>
-            <p>
-
-                Илова бар ин, дар Тоҷикистон
-                <a href="#" style="text-decoration:none;">
-
-                    Men's Defence
-
-                </a>
-
-                тақрибан як сол истифода мешавад, аз ин рӯ, омори расмии
-                Пажӯҳишгоҳи илмии урологияи Тоҷикистон дар асоси натиҷаҳои таҳқиқоти клиникӣ мавҷуд аст. Дар
-                тадцицот цариб 2000 нафар мардони синну соли гуногун иштирок карданд. Ҳамаи онҳо табобат
-                гирифтанд.
-
-
-            </p>
-            <div style="padding: 10px 15px;background-color: #ffffe1;border: 1px double #f72210;">
-                <p style="text-align: center;"><b>
-
-                        Дар натичаи тадкикот маълум гардид, ки
-                        <span id="month">
-
-                            моххои апрель
-
-                        </span>
-
-                        ва
-
-                        <span id="next_month">
-
-                            май
-
-                        </span>
-
-                        барои сар кардани табобат бехтарин вакт мебошанд. Бо
-                        муътадил гардондани харорати миёна процессхои мубодилаи моддахо дар организм тезонида,
-                        самараи дору зиёд мешавад. Табобат нисбат ба дигар даврахои сол 37 фоиз тезтар
-                        мегузарад.
-
-
-                    </b></p>
-            </div>
-            <div class="list-container">
-                <h2>
-
-                    Дар асоси натиҷаҳои тадқиқот ва озмоишҳои клиникӣ,
-                    натиҷаҳои зерин ба даст оварда шуданд:
-
-
-                </h2>
-                <ul class="styled-list-3">
-                    <li>
-
-                        Барқарорсозии функсияи эректилӣ - 99,7%. Бедоршавӣ
-                        якбора ба амал меояд, эрекцияи устувор дар давоми алоқаи ҷинсӣ то 2-3 соат нигоҳ дошта
-                        мешавад.
-
-
-                    </li>
-                    <li>
-
-                        Баланд шудани libido - 86,4%. Хоҳиши ҷинсӣ зуд-зуд
-                        бедор мешавад ва ба таври назаррас меафзояд
-
-
-                    </li>
-                    <li>
-
-                        Давомнокии алоќаи љинсї: давомнокии алоќаи љинсї то
-                        2-3 соат зиёд мешавад, ки ин муњим мегардад, зеро зуд ба анљом расидани алоќаи љинсї аз
-                        љониби мард метавонад занро аз лаззати пурраи худ боздорад.
-
-
-                    </li>
-                    <li>
-
-                        Оргазми шадид: Оргазм аз сабаби ҳассосияти бештари
-                        penis ва либидо бештар шадидтар мешавад.
-
-
-                    </li>
-                    <li>
-
-                        Хавфи боздошти ногаҳонии дил - то 30% кам карда
-                        мешавад
-
-
-                    </li>
-                    <li>
-
-                        Баландшавии дарозӣ ва паҳнои penis - 71% субъектҳо
-
-
-
-                    </li>
-                    <li>
-
-                        Танаффусро дар байни эрекция кӯтоҳ мекунад, ҳаҷм ва
-                        сифати нутфаро зиёд мекунад;
-
-
-
-                    </li>
-                    <li>
-
-                        Ба ғадуди простата таъсири сабуки зидди илтиҳобӣ
-                        дорад;
-
-
-
-                    </li>
-
-                </ul>
-            </div>
-
-            <p><a href="#" style="text-decoration:none;">
-
-                    Men's Defence
-
-                </a>
-
-                танҳо аз компонентҳои табиӣ иборат аст, ки аксуламалҳои
-                аллергияро ба вуҷуд намеоранд! Онро ҳатто агар шумо ба доруҳои дигар аллергия дошта бошед,
-                гирифтан мумкин аст. Он барои ҷигар комилан бехатар аст, зеро ҷигар одатан аз истифодаи қариб
-                ҳама доруҳо азият мекашад.
-
-
-            </p>
-            <p>
-
-                Маводи мухаддир аз ҷониби созмонҳои хайрия таҳия шудааст, ки
-                формулаи кимиёвии маводи мухаддирро низ доранд. Истехсоли махсулот холо ба иктидори заводхои
-                шахей вобаста буда, вусъат меёбад. Дар айни замон, маводи мухаддир танҳо тавассути барномаҳои
-                махсуси тахфиф фурӯхта мешавад.
-
-            </p>
-            <p><strong>
-
-                    -Барои иштирок дар ин барнома чӣ кор кардан лозим аст? Оё
-                    одамон ба ягон шаҳодатномаи тиббӣ ё шахсият ниёз доранд?
-
-
-                </strong></p>
-            <p><strong>
-
-                    Доктор Хироши Ямада:
-
-                </strong>
-
-                Барои гирифтани
-                <a href="#" style="text-decoration:none;">
-
-                    Men's Defence
-
-                </a>
-
-                , шумо бояд ба шартҳои зерин ҷавобгӯ бошед:
-
-
-            </p>
-            <p><strong class="comm">
-
-                    Шартҳои истифода
-                    <a href="#" style="text-decoration:none;">
-
-                        Men's Defence
-
-                    </a>
-
-                    :
-
-
-                </strong>
-            </p>
-            <li> <span style="    font-size: 18px;
-            line-height: 28px;
-            letter-spacing: -0.02em;font-family: Inter, sans-serif;"><strong>
-
-                        Танҳо барои истифодаи шахсӣ.
-
-                    </strong>
-                    <br>
-
-                    Мо дар бораи спекуляторҳо сухан меронем, ки кӯшиш
-                    мекунанд
-                    <a href="#" style="text-decoration:none;">
-
-                        Men's Defence-ро
-
-                    </a>
-
-
-                    ба таври оммавӣ харанд ва сипас онро бо нархи калон дубора фурӯшанд.
-
-
-                </span>
-            </li>
-            <li> <span style="    font-size: 18px;
-            line-height: 28px;
-            letter-spacing: -0.02em;font-family: Inter, sans-serif;"><strong>
-
-                        Тавассути вебсайти расмӣ дархост гузоред.
-
-
-                    </strong>
-                    <br>
-
-                    Шакли расмии дархост кафолати сифат ва муҳофизат аз
-                    тахминҳо мебошад.
-
-
-
-                </span>
-            </li>
-            <div style="width: 100%;border-bottom: 2px red double; margin: 20px auto;width: 80%;"></div>
-            <p><strong>
-
-                    - Барномаи тахфиф чанд муддат эътибор дорад?
-
-
-                </strong></p>
-            <p>
-
-                То
-
-
-                <script>dtime_nums(-1, true);</script>
-
-                фарогир ё то расидани маҳсулоти охирин
-                <a href="#" style="text-decoration:none;">
-
-                    Men's Defence
-
-                </a>
-
-                . Ва ин бо вуҷуди набудани таблиғ дар радио ва телевизион.
-                Одамон маълумотро мубодила мекунанд ва ба оила ва дӯстони худ тавсия медиҳанд. Вақте ки мо
-                фаҳмидем, ки шумораи зиёди одамон дар бораи барномаи тахфифҳои мо огоҳанд, барои мо ҳайратовар
-                буд. Аз ин рӯ, ман тавсия медиҳам, ки
-
-                ҳарчи зудтар
-                <a href="#" style="text-decoration:none;">
-
-                    Men's Defence
-
-                </a>
-
-                фармоиш диҳед .
-                Ин хеле оддӣ аст: фармоишро бо нишон додани ном ва рақами
-                телефони худ гузоред ва зангро бо нишон додани суроға ва вақти интиқол интизор шавед.
-
-
-            </p>
-            <p>
-
-                Умедворам, ки мардоне, ки аз мушкилоти потенсиалӣ ва
-                простатит азият мекашанд, эътимоди худро дубора пайдо мекунанд. Муҳим аст, ки табобати мушкилоти
-                интимиро ба таъхир надиҳед, хусусан имрӯз, вақте ки доруи дастрас ва муассир ба монанди
-                <a href="#" style="text-decoration:none;">
-
-                    Men's Defence
-
-                </a>
-
-                вуҷуд дорад . Агар шумо сари вақт ба кӯмак муроҷиат кунед,
-                шумо метавонед саломатӣ ва фаъолияти ҷинсии худро барои ҳаёт нигоҳ доред.
-
-
-            </p>
-            <div style="width: 100%;border-bottom: 2px red double; margin: 20px auto;width: 80%;"></div>
-
-
-
-
-
-            <p></p>
-
-            <div id="" class="" style="margin-top: 20px !important;">
-                <div class="order__block" style="display:block" id="target">
-
-
-                    <div class="order_block__wrapper" style="margin-top: 20px !important;">
-                        <div class="prod_img_wrapper"><img class="prod_img b-lazy" src="files/produkt.png"
-                                style="max-width: 250px">
-
-                        </div>
-
-
-                        <form class="form form_order" id="order_form" method="post" action="../combo-offer-uni/order.php">
-
-                            <div class="price">
-                                <div class="price__item price__item--old">
-                                    <div class="price__item-title">
-
-
-                                        Нархи кӯҳна:
-
-                                    </div>
-                                    <div class="price__item-value price__item-value--old">
-                                        <span class="x_price_previous">
-
-                                            500 TJS
-
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="price__item">
-                                    <div class="price__item-title">
-
-
-                                        Нархи нав:
-
-                                    </div>
-                                    <div class="price__item-value price__item-value--new">
-                                        <span class="x_price_current">
-
-                                            250 TJS
-
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <input class="form__input set_required" name="name" placeholder="Номи шумо" type="text"
-                                required="">
-                            <input class="form__input" name="phone" placeholder="Рақами мобилӣ" type="tel" minlength="5"
-                                required="">
-
-                            <button class="form_btn" type="submit">
-
-
-
-                                Бо тахфиф фармоиш диҳед
-
-
-                            </button>
-
-
-
-                            <input type="hidden" name="bay" value="{sub_id_12}">
-                            <input type="hidden" name="clickid" value="{subid}">
-                            
-                            <input type="hidden" name="landing" value="https://land1.abxyz.info/">
-                            <input type="hidden" name="offer_id" value="25282">
-                            <input type="hidden" name="rotator_id" value="367679">
-                            <input type="hidden" name="price" value="250">
-                            <input type="hidden" name="country" value="TJ">
-
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <h1 class="comm">
-
-                Шарҳҳо
-
-            </h1>
-            <div class="comments">
-                <div class="comment">
-                    <img src="files/w5.jpeg" class="ava b-lazy img.lazy b-lazy">
-                    <p>
-                        <b>
-
-                            Габриэла Ласковска
-
-                        </b>
-                    </p>
-                    <p class="comm-date">
-                        <script type="text/javascript">
-                            dtime_nums(-7, true);
-                        </script>
-
-
-
-
-                    </p>
-                    <p>
-
-
-                        Простатит ҳаёти маро ба даҳшат табдил дод, аммо ба шарофати
-                        <a href="#" style="text-decoration:none;">
-
-                            Men's Defence
-
-                        </a>
-
-                        ман худро хеле беҳтар ҳис кардам. Ман онро ба ҳама
-                        аз ин беморӣ тавсия медиҳам!
-
-
-
-
-                    </p>
-                </div>
-                <div class="comment">
-                    <img src="files/w6.jpeg" class="ava b-lazy img.lazy b-lazy">
-                    <p>
-                        <b>
-
-                            Эмилия Ласковска
-
-                        </b>
-                    </p>
-                    <p class="comm-date">
-                        <script type="text/javascript">
-                            dtime_nums(-7, true);
-                        </script>
-
-
-
-
-                    </p>
-                    <p>
-
-                        Тақрибан як моҳ пеш ман таъсири онро пас аз як ҳафтаи
-                        истифода мушоҳида кардам. Пештар дар бораи ҷарроҳӣ фикр мекардам, аммо ҳоло онро бекор
-                        кардам. Ман 54-солаам, аммо худро 34-сола ҳис мекунам, ман инро интизор набудам.
-
-
-
-
-                    </p>
-                    <div class="comment ans">
-                        <img src="files/m7.jpeg" class="ava b-lazy img.lazy b-lazy">
-                        <p>
-                            <b>
-
-                                Кшиштоф Вробел
-
-                            </b>
-                        </p>
-                        <p class="comm-date">
-                            <script type="text/javascript">
-                                dtime_nums(-6, true);
-                            </script>
-
-
-
-
-                        </p>
-                        <p>
-
-                            Ман комилан розӣ ҳастам! Молҳои хушсифат! Ман
-                            онро чанде пеш, якуним моҳ пеш харидаам, аз он вақт инҷониб ягон мушкилот вуҷуд
-                            надошт. Ман аз простатит абадан халос шудам, гарчанде ки пеш аз ин ман муддати дароз
-                            барқарор шуда наметавонистам, илова бар ин, эрекцияи ман хеле беҳтар шуд ва майли
-                            ман ба алоқаи ҷинсӣ зиёд шуд! Ман онро ба ҳама тавсия медиҳам, махсусан мардони аз
-                            чиҳил боло! Ташаккур
-                            <a href="#" style="text-decoration:none;">
-
-                                Men's Defence
-
-                            </a>
-
-                            .
-
-
-
-                        </p>
-                    </div>
-                </div>
-
-                <div class="comment">
-                    <img src="files/m5.jpeg" class="ava b-lazy img.lazy b-lazy">
-                    <p>
-                        <b>
-
-                            Кинга Малек
-
-                        </b>
-                    </p>
-                    <p class="comm-date">
-                        <script type="text/javascript">
-                            dtime_nums(-6, true);
-                        </script>
-
-
-
-
-                    </p>
-                    <p>
-
-
-                        Ман таваккал кардам ва то ҳол пушаймон нестам. Ҳеҷ гуна таъсири тараф вуҷуд надошт,
-                        натиҷа ба ман маъқул шуд.
-
-
-                    </p>
-                </div>
-                <div class="comment">
-                    <img src="files/w11.jpeg" class="ava b-lazy img.lazy b-lazy">
-                    <p>
-                        <b>
-
-                            Халина Косинска
-
-                        </b>
-                    </p>
-                    <p class="comm-date">
-                        <script type="text/javascript">
-                            dtime_nums(-5, true);
-                        </script>
-
-
-
-
-                    </p>
-                    <p>
-
-                        Шавҳарам ҳам мушкилот дошт, муддати тӯлонӣ кӯшиш
-                        кард, ки онҳоро табобат кунад, аммо бенатиҷа. Баъдан як коршинос гуфт, ки бактерияҳое,
-                        ки боиси простатит мешаванд, ба антибиотикҳое, ки шавҳар истеъмол мекунад, одат мекунад.
-                        Пас панд дод
-                        <a href="#" style="text-decoration:none;">
-
-                            Men's Defence
-
-                        </a>
-
-                        . Шавҳараш ба нишони миннатдорӣ ба ӯ як қуттии виски
-                        дод.
-
-
-
-
-
-                    </p>
-
-                </div>
-                <div class="comment ">
-                    <img src="files/w12.jpeg" class="ava b-lazy img.lazy b-lazy">
-                    <p>
-                        <b>
-
-                            Доминика Левандовска
-
-                        </b>
-                    </p>
-                    <p class="comm-date">
-                        <script type="text/javascript">
-                            dtime_nums(-5, true);
-                        </script>
-
-
-
-
-                    </p>
-                    <p>
-
-
-                        Ман маҳсулоти зиёдеро санҷидам, аммо
-                        <a href="#" style="text-decoration:none;">
-
-                            Men's Defence
-
-                        </a>
-
-                        беҳтарин аст. Барои мубориза бо простатит ва
-                        барқарор кардани эътимод ба худ кӯмак кард.
-
-
-                    </p>
-                </div>
-                <div class="comment">
-                    <img src="files/w13.jpeg" class="ava b-lazy img.lazy b-lazy">
-                    <p>
-                        <b>
-
-                            Дэмиан Вроблевски
-
-                        </b>
-                    </p>
-                    <p class="comm-date">
-                        <script type="text/javascript">
-                            dtime_nums(-5, true);
-                        </script>
-
-
-
-
-                    </p>
-                    <p>
-
-
-                        Ташаккури зиёд! Ман то ҳол тавонистам як баста бихарам. Ман онро ба зудӣ кӯшиш мекунам.
-
-
-
-
-                    </p>
-                </div>
-                <div class="comment">
-                    <img src="files/w14.jpeg" class="ava b-lazy img.lazy b-lazy">
-                    <p>
-                        <b>
-
-                            Ҳенрик Залевски
-
-                        </b>
-                    </p>
-                    <p class="comm-date">
-                        <script type="text/javascript">
-                            dtime_nums(-4, true);
-                        </script>
-
-
-
-
-                    </p>
-                    <p>
-
-
-                        Шояд ин дору воқеан самаранок бошад, аммо ман мегӯям, ки баъзе шубҳаҳо вуҷуд доранд.
-                        Баъд аз ҳама, ман бовар карда наметавонам, ки чунин нархи хуб вуҷуд дорад!
-
-
-
-
-                    </p>
-                    <div class="comment ans">
-                        <img src="files/m17.jpeg" class="ava b-lazy img.lazy b-lazy">
-                        <p>
-                            <b>
-
-                                Пиотр Левики
-
-                            </b>
-                        </p>
-                        <p class="comm-date">
-                            <script type="text/javascript">
-                                dtime_nums(-3, true);
-                            </script>
-
-
-
-
-                        </p>
-                        <p>
-
-
-                            Ман шубҳаҳои шуморо мефаҳмам, хусусан вақте ки сухан дар бораи саломатӣ меравад,
-                            аммо агар шумо баландтар шавед, нархи воқеӣ дар он ҷо нишон дода мешавад, ман доруро
-                            ду ҳафта пеш фармоиш додам ва аллакай натиҷаҳоро дида истодаам!
-
-
-
-
-
-                        </p>
-                    </div>
-                </div>
-
-                <div class="comment">
-                    <img src="files/m8.jpeg" class="ava b-lazy img.lazy b-lazy">
-                    <p>
-                        <b>
-
-                            Павел Горецки
-
-                        </b>
-                    </p>
-                    <p class="comm-date">
-                        <script type="text/javascript">
-                            dtime_nums(-3, true);
-                        </script>
-
-
-
-
-                    </p>
-                    <p>
-
-
-                        Ман ҳеҷ гоҳ фикр намекардам, ки рӯзе ба ман ин ташхиси даҳшатнокро мегӯянд. Барои
-                        ҷавонон ин монеа ҳам барои эътимод ба худ ва ҳам дар ҳаёти ҷинсӣ аст. Хуб, ман ноумед
-                        нашудам ва дар ҳама ҷабҳаҳо роҳи ҳалли ҳамаҷониба меҷустам. Ман пушаймон набудам, ки
-                        пулро барои табобат сарф кардам. Ман муддати тӯлонӣ табобат кардам, аммо дар ниҳоят ин
-                        ба ман кӯмак кард.
-                        <a href="#" style="text-decoration:none;">
-
-                            Men's Defence
-
-                        </a>
-
-                        ! Ман интизор набудам, ки он зуд ва бе мушкилот кор
-                        мекунад.
-
-
-
-
-
-
-                    </p>
-                </div>
-                <div class="comment">
-                    <img src="files/w15.jpeg" class="ava b-lazy img.lazy b-lazy">
-                    <p>
-                        <b>
-
-
-                            Марта Пшибыш
-
-                        </b>
-                    </p>
-                    <p class="comm-date">
-                        <script type="text/javascript">
-                            dtime_nums(-2, true);
-                        </script>
-
-
-
-
-                    </p>
-                    <p>
-
-
-                        Ман ба ин гуна доруҳо шубҳа доштам, аммо
-                        <a href="#" style="text-decoration:none;">
-
-                            Men's Defence
-
-                        </a>
-
-                        фикрамро дигар кард. Ташаккур барои самаранокӣ!
-
-
-
-
-
-                    </p>
-                </div>
-                <div class="comment">
-                    <img src="files/m9.jpeg" class="ava b-lazy img.lazy b-lazy">
-                    <p>
-                        <b>
-
-
-                            Войцех Зич
-
-                        </b>
-                    </p>
-                    <p class="comm-date">
-                        <script type="text/javascript">
-                            dtime_nums(-2, true);
-                        </script>
-
-
-
-
-                    </p>
-                    <p>
-
-
-                        Оё маводи мухаддир дар ҳақиқат ин қадар самаранок аст?
-
-
-
-
-
-
-                    </p>
-                    <div class="comment ans">
-                        <img src="files/m10.jpeg" class="ava b-lazy img.lazy b-lazy">
-                        <p>
-                            <b>
-
-                                Майкл Плута
-
-                            </b>
-                        </p>
-                        <p class="comm-date">
-                            <script type="text/javascript">
-                                dtime_nums(-2, true);
-                            </script>
-
-
-
-
-                        </p>
-                        <p>
-
-
-                            Бале, дар ҳақиқат, бисёре аз корбарон, аз ҷумла ман, пас аз истифодаи ин дору
-                            беҳбудиҳои назаррасро мушоҳида карданд. Он барои ҳалли мушкилоти ман зуд ва
-                            самаранок кор мекунад. Ман аз натиҷаҳо хеле қаноатмандам ва онро ба дигарон тавсия
-                            медиҳам. Агар простатит табобат карда нашавад, он метавонад оқибатҳои бад дошта
-                            бошад. Як дӯсти ман аз аденома ғадуди простата вафот кард. 46 сола. 2 фарзанд.
-
-
-
-                        </p>
-                        <div id="comments"></div>
-                    </div>
-                </div>
-
-                <form id="commentForm" action="#">
-                    <input type="text" id="userName" required="" minlength="5" placeholder="Номи худро ворид кунед">
-                    <input type="text" id="userComment" required="" minlength="10"
-                        placeholder="Шарҳи худро ворид кунед">
-                    <button onclick="addComment()">
-
-                        Эзоҳ илова кунед
-
-                    </button>
-                </form>
-
-
-            </div>
-            <div id="" class="" style="margin-top: 20px !important;">
-                <div class="order__block" style="display:block" id="target">
-
-
-                    <div class="order_block__wrapper" style="margin-top: 20px !important;">
-                        <div class="prod_img_wrapper"><img class="prod_img b-lazy" src="files/produkt.png"
-                                style="max-width: 250px">
-
-                        </div>
-                        <style>
-                            #commentForm {
-                                display: flex;
-                                flex-direction: column;
-                                align-items: center;
-                                margin: 20px;
-                            }
-
-                            #userName,
-                            #userComment {
-                                width: 80%;
-                                padding: 9px;
-                                margin: 5px;
-                                border: 1px solid #ccc;
-                                border-radius: 8px;
-                                border-color: rgba(0, 0, 0, 0.493);
-                            }
-
-                            button {
-                                background-color: #1c1a86;
-                                color: white;
-                                border: none;
-                                border-radius: 5px;
-                                cursor: pointer;
-                                width: 80%;
-                            }
-                        </style>
-
-                        <form class="form form_order" id="order_form" method="post" action="../combo-offer-uni/order.php">
-                            <span class="date date_start">
-
-                                Оғози таблиғот:
-
-
-                                <script type="text/javascript">
-                                    dtime_nums(-7, true);
-                                </script>
-
-
-
-
-                            </span>
-
-                            <span class="date date_end">
-
-                                Анҷоми таблиғот:
-
-
-                                <script type="text/javascript">
-                                    dtime_nums(-1, true);
-                                </script>
-
-
-
-
-                            </span>
-                            <div class="price">
-                                <div class="price__item price__item--old">
-                                    <div class="price__item-title">
-
-
-                                        Нархи кӯҳна:
-
-                                    </div>
-                                    <div class="price__item-value price__item-value--old">
-                                        <span class="x_price_previous">
-
-                                            500 TJS
-
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="price__item">
-                                    <div class="price__item-title">
-
-
-                                        Нархи нав:
-
-                                    </div>
-                                    <div class="price__item-value price__item-value--new">
-                                        <span class="x_price_current">
-
-                                            250 TJS
-
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <input class="form__input set_required" name="name" placeholder="Номи шумо" type="text"
-                                required="">
-                            <input class="form__input set_required" name="phone" placeholder="Рақами мобилӣ" type="tel"
-                                minlength="5" required="">
-
-                            <button class="form_btn" type="submit">
-
-
-
-                                Бо тахфиф фармоиш диҳед
-
-
-                            </button>
-
-
-
-                            <input type="hidden" name="bay" value="{sub_id_12}">
-                            <input type="hidden" name="clickid" value="{subid}">
-
-                            <input type="hidden" name="landing" value="https://land1.abxyz.info/">
-                            <input type="hidden" name="offer_id" value="25282">
-                            <input type="hidden" name="rotator_id" value="367679">
-                            <input type="hidden" name="price" value="250">
-                            <input type="hidden" name="country" value="TJ">
-
-                        </form>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+      <h1>Crypto Portfolio Tracker</h1>
+      <div class="last-updated" id="lastUpdated">Loading...</div>
+      <div class="controls">
+        <button id="refreshBtn">⟳ Refresh Data</button>
+        <button id="exportBtn">📤 Export Data</button>
+        <button id="importBtn">📥 Import Data</button>
+        <button id="exportToFileBtn">💾 Save to File</button>
+        <button id="importFromFileBtn">📂 Load from File</button>
+      </div>
+      <div class="analytic_block">
+        <div class="portfolio-summary" id="totalPortfolio">
+          Total Portfolio: $0.00
         </div>
+        <div class="portfolio-summaries">
+          <div class="portfolio-summary eth-summary" id="ethPortfolioSummary">
+            ETH Comparison: $0.00
+          </div>
+        </div>
+      </div>
+      <div class="performance-section">
+        <h2>Performance Overview</h2>
+        <div class="controls">
+          <button id="sortByROI">Sort by ROI ↓</button>
+          <button id="sortByPNL">Sort by PNL ↓</button>
+          <button id="sortByPercent">Sort by percent ↓</button>
+          <button id="sortByInvested">Sort by Invested ↓</button>
+        </div>
+
+        <table id="performanceTable">
+          <thead>
+            <tr>
+              <th>Asset</th>
+              <th>Amount</th>
+              <th>Invested</th>
+              <th>Current Value</th>
+              <th>Profit/Loss</th>
+              <th>ROI</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Data will be inserted here -->
+          </tbody>
+        </table>
+      </div>
+   
+
+      <div class="export-import" id="exportImportSection" style="display: none">
+        <textarea
+          id="dataTextarea"
+          placeholder="Paste your portfolio JSON data here"
+        ></textarea>
+        <div>
+          <button id="importConfirmBtn">✔ Confirm Import</button>
+          <button id="cancelImportBtn">✖ Cancel</button>
+        </div>
+      </div>
+
+      <div class="crypto-grid" id="cryptoGrid">
+        <!-- Crypto cards will be inserted here -->
+      </div>
+
+      <!-- ETH Comparison table will be inserted here by script -->
     </div>
-    <footer>
-        <a href="#" target="_blank">
 
-            Шартҳо ва шартҳо
-
-        </a>
-
-        |
-
-        <a href="#" target="_blank">
-
-            Сиёсати махфият
-
-        </a>
-
-        |
-
-        <a target="blank" href="#">
-
-            Сиёсати баргардонидан, баргардонидан ва мубодила
-
-        </a>
-    </footer>
-
-    <script src="files/wheel.js"></script>
-
-    <script>
-        const btn = document.querySelectorAll('a[href*="#"]');
-        const hiddenElement = document.getElementById("target");
-        for (let btns of btn) {
-            btns.addEventListener("click", function (e) {
-                e.preventDefault();
-                hiddenElement.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                });
-            });
-        }
-    </script>
-    <script>
-        function getURLParameter(name) {
-            return decodeURI(
-                (RegExp(name + '=' + '(.*?)(&|$)').exec(location.search) || [, null])[1] || ''
-            );
-        }
-        document.addEventListener("DOMContentLoaded", function (event) {
-            var fbp = getURLParameter('fbp');
-            if (fbp != "") {
-                var hide_input = document.createElement('input');
-                hide_input.setAttribute('name', 'fbp');
-                hide_input.setAttribute('type', 'hidden');
-                hide_input.value = fbp;
-                var forms = document.querySelectorAll('form');
-                forms.forEach(function (element) {
-                    var input = element.querySelector('input[name=fbp]');
-                    if (input) {
-                        console.log('change value');
-                        input.value = subid;
-                    } else {
-                        console.log('add input');
-                        var input_clone = hide_input.cloneNode();
-                        element.append(input_clone);
-                    }
-                });
-            }
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Функция для удаления класса blur и добавления класса hidden к подсказке
-            function handleImageClick(imageId, handId) {
-                var image = document.getElementById(imageId);
-                var hand = document.getElementById(handId);
-
-                if (image && hand) {
-                    image.classList.remove('blur');
-                    hand.classList.add('hidden');
-                }
-            }
-
-            // Обработчики для каждой из четырех картинок
-            document.getElementById('image1', 'hand1').addEventListener('click', function () {
-                handleImageClick('image1', 'hand1');
-            });
-
-            document.getElementById('image2', 'hand2').addEventListener('click', function () {
-                handleImageClick('image2', 'hand2');
-            });
-
-            document.getElementById('image3', 'hand3').addEventListener('click', function () {
-                handleImageClick('image3', 'hand3');
-            });
-
-            document.getElementById('image4', ' hand4').addEventListener('click', function () {
-                handleImageClick('image4', 'hand4');
-            });
-            document.getElementById('hand1',).addEventListener('click', function () {
-                handleImageClick('image1', 'hand1');
-            });
-
-            document.getElementById('hand2',).addEventListener('click', function () {
-                handleImageClick('image2', 'hand2');
-            });
-
-            document.getElementById('hand3',).addEventListener('click', function () {
-                handleImageClick('image3', 'hand3');
-            });
-
-            document.getElementById('hand4', ' ').addEventListener('click', function () {
-                handleImageClick('image4', 'hand4');
-            });
-        });
-    </script>
-
-    <script>
-        const months = ['январ', 'феврал', 'март', 'апрел', 'май', 'июн', 'июл', 'август', 'сентябр', 'октябр', 'ноябр', 'декабр'];
-
-        const currentDate = new Date();
-        const currentMonthIndex = currentDate.getMonth();
-        const currentMonth = months[currentMonthIndex];
-        const nextMonthIndex = (currentMonthIndex + 1) % 12;
-        const nextMonth = months[nextMonthIndex];
-
-
-        const monthElement = document.getElementById('month');
-        monthElement.innerHTML = `${currentMonth}`;
-
-        const nextMonthlement = document.getElementById('next_month');
-        nextMonthlement.innerHTML = `${nextMonth}`;
-    </script>
-    <script>
-        function addComment() {
-            const userName = document.getElementById('userName').value;
-            const userComment = document.getElementById('userComment').value;
-
-            const commentElement = document.createElement('div');
-            commentElement.classList.add('comment_new', 'comment');
-
-            const imgElement = document.createElement('img');
-            imgElement.src = 'files/user_no_foto.jpg';
-            imgElement.classList.add('ava', 'b-lazy', 'img.lazy', 'b-lazy');
-            commentElement.appendChild(imgElement);
-
-            const userElement = document.createElement('p');
-            const boldElement = document.createElement('b');
-            boldElement.textContent = userName;
-            userElement.appendChild(boldElement);
-            commentElement.appendChild(userElement);
-
-            const dateElement = document.createElement('p');
-            dateElement.classList.add('comm-date');
-            const scriptElement = document.createElement('script');
-            scriptElement.setAttribute('type', 'text/javascript');
-            scriptElement.textContent = 'dtime_nums(-2, true);';
-            dateElement.appendChild(scriptElement);
-            const currentDate = new Date();
-            const currentDateString = `${currentDate.getDate()}.${currentDate.getMonth() + 1}.${currentDate.getFullYear()}`;
-            dateElement.innerHTML += currentDateString;
-            commentElement.appendChild(dateElement);
-
-            const userCommentElement = document.createElement('p');
-            userCommentElement.textContent = userComment;
-            commentElement.appendChild(userCommentElement);
-
-            const commentsContainer = document.getElementById('comments');
-            commentsContainer.appendChild(commentElement);
-
-
-            // Сохраняем комментарий в localStorage
-            const allComments = JSON.parse(localStorage.getItem('comments')) || [];
-            const newComment = { userName, userComment, html: commentElement.outerHTML };
-            allComments.push(newComment);
-            localStorage.setItem('comments', JSON.stringify(allComments));
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-            const allComments = JSON.parse(localStorage.getItem('comments')) || [];
-            const commentsContainer = document.getElementById('comments');
-
-            allComments.forEach(comment => {
-                const commentElement = document.createElement('div');
-                commentElement.innerHTML = comment.html;
-
-                commentsContainer.appendChild(commentElement);
-            });
-        });
-    </script>
-
-<script type="text/javascript" id="ppscript">
-    document.addEventListener("DOMContentLoaded", function (event) {
-        const currentUrl = document.baseURI;
-        var from = currentUrl.search('lander/');
-        var to = currentUrl.length;
-        var folder = currentUrl.substring(from + 7, to);
-        folder = folder.replace('/index.html', '');
-        if (folder != "") {
-            var hide_input = document.createElement('input');
-            hide_input.setAttribute('name', 'folder');
-            hide_input.setAttribute('type', 'hidden');
-            hide_input.value = folder;
-            var forms = document.querySelectorAll('form');
-            forms.forEach(function (element) {
-                var input = element.querySelector('input[name=folder]');
-                if (input) {
-                    console.log('change value');
-                    input.value = subid;
-                } else {
-                    console.log('add input');
-                    var input_clone = hide_input.cloneNode();
-                    element.append(input_clone);
-                }
-            });
-        }
-    });</script>
-</body>
-
+    <div class="table-container">
+      <h3>ATH & ATL Values</h3>
+      <table id="athAtlTable" class="performance-table">
+        <thead>
+          <tr>
+            <th>Asset</th>
+            <th>Amount</th>
+            <th>ATL Price</th>
+            <th>ATL Value</th>
+            <th>ATH Price</th>
+            <th>ATH Value</th>
+            <th>Current Value</th>
+            <th style="cursor:pointer">% of ATH</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <script src="app.js"> </script>
+  </body>
 </html>

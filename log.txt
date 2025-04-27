@@ -1,0 +1,62 @@
+{
+  "STRK": {
+    "amount": 3979,
+    "buyPrice": 0.125659713
+  },
+  "JUP": {
+    "amount": 267.923,
+    "buyPrice": 0.373241566
+  },
+  "W": {
+    "amount": 6731,
+    "buyPrice": 0.074283167
+  },
+  "ADA": {
+    "amount": 640.4,
+    "buyPrice": 0.624609619
+  },
+  "AVAX": {
+    "amount": 20.50843888,
+    "buyPrice": 19.50416618
+  },
+  "XLM": {
+    "amount": 614,
+    "buyPrice": 0.244299674
+  },
+  "NEAR": {
+    "amount": 193.74,
+    "buyPrice": 2.06462269
+  },
+  "ATOM": {
+    "amount": 97.12,
+    "buyPrice": 4.118616145
+  },
+  "ARB": {
+    "amount": 1362,
+    "buyPrice": 0.293685756
+  },
+  "APTOS": {
+    "amount": 82.76558786,
+    "buyPrice": 4.832926465
+  },
+  "TWT": {
+    "amount": 198,
+    "buyPrice": 0.757575758
+  },
+  "PX": {
+    "amount": 22000,
+    "buyPrice": 0.2
+  },
+  "USDT": {
+    "amount": 1001,
+    "buyPrice": 1
+  },
+  "USDC": {
+    "amount": 500,
+    "buyPrice": 1
+  },
+  "ZK": {
+    "amount": 10110,
+    "buyPrice": 0.049455984
+  }
+}

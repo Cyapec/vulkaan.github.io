@@ -1,0 +1,488 @@
+body {
+  font-family: "Arial", sans-serif;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #0f172a;
+}
+*{
+  font-family: 'Inter', sans-serif !important;
+
+}
+h1 {
+  color: white;
+  text-align: center;
+}
+.last-updated {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+.crypto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 15px;
+}
+.crypto-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.crypto-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.crypto-name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 10px;
+}
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+.change {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 10px;
+}
+.positive {
+  background-color: #e6f7e6;
+  color: #2e7d32 !important;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 14px;
+  color: white;
+}
+.portfolio-info {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed #ddd;
+}
+.portfolio-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+.input-form {
+  margin-top: 10px;
+  display: none;
+}
+.input-form input {
+  width: 80px;
+  padding: 5px;
+  margin-right: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.input-form button {
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.edit-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  font-size: 14px;
+}
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+.controls button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.controls button:hover {
+  background-color: #45a049;
+}
+.export-import {
+  margin-top: 20px;
+  text-align: center;
+}
+.export-import textarea {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.performance-section {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.performance-section h2 {
+  margin-top: 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.sort-options {
+  margin-bottom: 15px;
+}
+
+.sort-options button {
+  background: #334155;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sort-options button:hover {
+  background: #475569;
+}
+
+#performanceTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#performanceTable th,
+#performanceTable td {
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid #334155;
+
+  color: white;
+}
+
+#performanceTable th {
+  background: #334155;
+  color: white;
+  font-weight: 600;
+}
+
+
+#performanceTable img {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.portfolio-summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolio-summary-item span:first-child {
+  font-weight: 600;
+}
+
+#performanceTable .total-row {
+  background: #334155;
+  font-weight: bold;
+}
+
+#performanceTable .total-row:hover {
+  background: #3c4a63;
+}
+
+#performanceTable .total-row td {
+  border-top: 2px solid #475569;
+  border-bottom: none;
+}
+span .zxc {
+  font-size: 1em;
+  margin-left: 2px;
+}
+#performanceTable tbody .negative {
+  background-color: #ffebee;
+  color: #c62828;
+}
+.negative {
+  background-color: #ffebee;
+  color: #c62828;
+}
+/* Фильтры и Total Portfolio */
+.portfolio-header {
+  margin-bottom: 20px;
+  padding: 15px;
+  color: red;
+  border-radius: 8px;
+}
+
+.filter-buttons {
+  margin: 10px 0;
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+}
+
+.filter-btn.active {
+  background: #6200ee;
+  color: white;
+}
+
+/* Столбец "% от портфеля" */
+.portfolio-percent {
+  color: #666;
+  font-size: 0.9em;
+}
+.total-portfolio {
+  margin: 20px 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+.portfolio-summary {
+  color: white !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.portfolio-summary-item {
+  color: white !important;
+
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #334155;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  transition: transform 0.2s ease;
+}
+
+
+
+.portfolio-summary-item span:first-child {
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.portfolio-summary-item span:last-child {
+  font-size: 18px;
+  font-weight: 600;
+}
+tr .positive,
+tr .negative {
+  width: 80px;
+  border-right: 1px solid #1e293b;
+}
+.portfolio-summary-item .positive {
+  color: #10b981;
+  font-weight: 700;
+  
+}
+.portfolio-summary-item .positive,
+.portfolio-summary-item .negative
+
+
+{padding: 5px;
+  border-radius: 5px;}
+.negative {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+/* Анимация при обновлении данных */
+@keyframes pulseUpdate {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.total-portfolio.updating .portfolio-summary-item {
+  animation: pulseUpdate 1.5s infinite;
+}
+#performanceTable tr:hover td:last-child {
+  font-weight: 500;
+  color: #ffffff;
+}
+.portfolio-percent {
+  font-family: "Roboto Mono", monospace;
+  font-size: 17px;
+  color: #718096;
+  letter-spacing: -0.5px;
+}
+@media (max-width: 768px) {
+  #performanceTable td,
+  #performanceTable th {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  #performanceTable th:last-child,
+  #performanceTable td:last-child {
+    padding-right: 10px;
+  }
+}
+
+.profit {
+  width: 80px !important;
+}
+
+/* Стили для таблицы */
+#performanceTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+
+}
+#performanceTable th #performanceTable td {
+  width: 1%; /* Минимальная ширина */
+  white-space: nowrap; /* Запрет переноса текста */
+  text-align: right; /* Выравнивание по правому краю */
+  padding-right: 20px; /* Увеличенный отступ справа */
+}
+/* Стили для таблицы сравнения */
+.eth-comparison {
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  color: white !important;
+}
+
+.eth-comparison h3 {
+  margin-top: 0;
+  color: #ffffff;
+  font-size: 1.2em;
+}
+.eth-comparison .comparison-table .positive,
+.eth-comparison .comparison-table .negative{
+  border-radius: 5px;
+}
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+.comparison-table th {
+  background-color: #334155;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.comparison-table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.eth-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.eth-controls input {
+  padding: 8px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+  flex-grow: 1;
+}
+
+.eth-controls button {
+  padding: 8px 15px;
+  background: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.eth-controls button:hover {
+  background: #3182ce;
+}
+.eth-comparison {
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.eth-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.eth-controls input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #cbd5e0;
+  border-radius: 4px;
+}
+.portfolio-summaries {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.portfolio-summary {
+  flex: 1;
+  min-width: 300px;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.eth-summary {
+  border-radius: 0;
+}
+
+.analytic_block{
+  background: #1e293b;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+border-radius: 5px;
+}#athAtlTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+
